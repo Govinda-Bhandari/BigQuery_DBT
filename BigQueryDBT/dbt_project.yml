@@ -31,9 +31,18 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   bigquery_dbt:
-    +recursive: true
-    +materialized: table
-    +schema: stg_northwind
+    example:
+      staging:
+        +schema: stg_northwind
+        +materialized: table
+        +recursive: true
+
+      warehouse:
+        +schema: dwh_northwind
+        +materialized: table
+        +recursive: true
+
+
 
 
 
